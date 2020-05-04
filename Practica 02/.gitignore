@@ -1,0 +1,12 @@
+# Default ignored files
+out/
+
+# Intellij ignored files
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Scala ignored files
+target/
+*.class
