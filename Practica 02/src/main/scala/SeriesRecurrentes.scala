@@ -18,18 +18,18 @@ object SeriesRecurrentes extends App {
   println("Series Definidas de Forma Recurrente" + "\n")
 
   val fibonacci = seriesRecurrentes(0, 1, 5, (a, b) => a + b)
-  println("Serie de Fibonacci" + fibonacci + "\n")
+  println("Serie de Fibonacci: " + fibonacci + "\n")
 
-  val lucas = seriesRecurrentes(2, 1, 5, (a, b) => a + b)
-  println("Serie de Lucas" + lucas + "\n")
+  val lucas = seriesRecurrentes(2, 1, 5, (a, b) => (a + b))
+  println("Serie de Lucas: " + lucas + "\n")
 
-  val pell = seriesRecurrentes(2, 6, 5, (a, b) => 2 * a + b)
-  println("Serie de Pell" + pell + "\n")
+  val pell = seriesRecurrentes(2, 6, 5, (a, b) => (2 * b + a))
+  println("Serie de Pell: " + pell + "\n")
 
-  val pell_lucas = seriesRecurrentes(2, 2, 5, (a, b) => 2 * a + b)
-  println("Serie de Pell - Lucas" + pell_lucas "\n")
+  val pell_lucas = seriesRecurrentes(2, 2, 5, (a, b) => (2 * b + a))
+  println("Serie de Pell - Lucas: " + pell_lucas + "\n")
 
-  val jacobsthal = seriesRecurrentes(0, 1, 5, (a, b) => a + 2 * b)
-  println("Serie de Jacobsthal" + jacobsthal + "\n")
+  val jacobsthal = seriesRecurrentes(0, 1, 5, (a, b) => (b + 2 * a))
+  println("Serie de Jacobsthal: " + jacobsthal + "\n")
 
 }

@@ -30,8 +30,8 @@ object BusquedaBinaria extends App {
   val valor1: Char = 'r'
   val comparador1 = (x: Char, y: Char) => x < y
 
-  val lista2: Array[Int] = Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
-  val valor2: Int = '3'
+  val lista2: Array[Int] = Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  val valor2: Int = 3
   val comparador2 = (x: Int, y: Int) => x < y
 
   println("Busqueda Binaria Generica" + "\n")

@@ -1,29 +1,24 @@
-import scala.math
-
 object BusquedaSaltos extends App {
 
   def busquedaSaltos[A](coleccion: Array[A], aBuscar: A, criterio: (A, A) => Boolean): Int = {
 
     val bloque = math.sqrt(coleccion.length).toInt
 
-    @annotation.tailrec
     def buscar(coleccion: Array[A], contador: Int = 0): Int = {
       if (0 == coleccion.length) {
         return -1
       }
 
-      val elemento = coleccion(bloque - 1)
-
-      if (elemento == aBuscar) {
-        bloque + contador
-      } else if (bloque > coleccion.length || !criterio(elemento, aBuscar)) {
+      if (bloque > coleccion.length || !criterio(coleccion(bloque - 1), aBuscar)) {
         for (posicion <- 0 to bloque) {
           if (aBuscar == coleccion(posicion)) {
-            return contador + posicion + 1
+            return contador + posicion
           }
         }
 
         -1
+      }else if (coleccion(bloque - 1) == aBuscar) {
+        bloque + contador - 1
       } else {
         buscar(coleccion.slice(bloque, coleccion.length), bloque + contador)
       }

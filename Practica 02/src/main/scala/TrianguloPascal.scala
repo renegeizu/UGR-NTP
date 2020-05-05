@@ -1,10 +1,12 @@
 object TrianguloPascal extends App {
 
   def calcularValorTrianguloPascal(fila: Int, columna: Int): Int = {
-    if (columna == 0 || columna == fila) {
+    if (fila < columna) {
+      -1
+    }else if (columna == 0 || columna == fila) {
       1
     } else {
-      calcularValorTrianguloPascal(fila - 1, columna) + calcularValorTrianguloPascal(fila - 1, columna)
+      calcularValorTrianguloPascal(fila - 1, columna) + calcularValorTrianguloPascal(fila - 1, columna - 1)
     }
   }
 
@@ -24,5 +26,5 @@ object TrianguloPascal extends App {
 
   generarTriangulo(10)
 
-  calcularValorTrianguloPascal(15, 10)
+  println(calcularValorTrianguloPascal(15, 10))
 }
