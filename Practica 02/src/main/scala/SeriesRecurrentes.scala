@@ -15,21 +15,35 @@ object SeriesRecurrentes extends App {
     }
   }
 
-  println("Series Definidas de Forma Recurrente" + "\n")
+  def test(): Unit = {
 
-  val fibonacci = seriesRecurrentes(0, 1, 5, (a, b) => a + b)
-  println("Serie de Fibonacci: " + fibonacci + "\n")
+    println("Series Definidas de Forma Recurrente" + "\n")
 
-  val lucas = seriesRecurrentes(2, 1, 5, (a, b) => (a + b))
-  println("Serie de Lucas: " + lucas + "\n")
+    println("Serie de Fibonacci (2): " + seriesRecurrentes(0, 1, 2, (a, b) => a + b) + "\n")
+    println("Serie de Fibonacci (3): " + seriesRecurrentes(0, 1, 3, (a, b) => a + b) + "\n")
+    println("Serie de Fibonacci (4): " + seriesRecurrentes(0, 1, 4, (a, b) => a + b) + "\n")
+    println("Serie de Fibonacci (5): " + seriesRecurrentes(0, 1, 5, (a, b) => a + b) + "\n")
 
-  val pell = seriesRecurrentes(2, 6, 5, (a, b) => (2 * b + a))
-  println("Serie de Pell: " + pell + "\n")
+    println("Serie de Lucas (2): " + seriesRecurrentes(2, 1, 2, (a, b) => a + b) + "\n")
+    println("Serie de Lucas (3): " + seriesRecurrentes(2, 1, 3, (a, b) => a + b) + "\n")
+    println("Serie de Lucas (4): " + seriesRecurrentes(2, 1, 4, (a, b) => a + b) + "\n")
+    println("Serie de Lucas (5): " + seriesRecurrentes(2, 1, 5, (a, b) => a + b) + "\n")
 
-  val pell_lucas = seriesRecurrentes(2, 2, 5, (a, b) => (2 * b + a))
-  println("Serie de Pell - Lucas: " + pell_lucas + "\n")
+    println("Serie de Pell (2): " + seriesRecurrentes(2, 6, 2, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell (3): " + seriesRecurrentes(2, 6, 3, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell (4): " + seriesRecurrentes(2, 6, 4, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell (5): " + seriesRecurrentes(2, 6, 5, (a, b) => 2 * b + a) + "\n")
 
-  val jacobsthal = seriesRecurrentes(0, 1, 5, (a, b) => (b + 2 * a))
-  println("Serie de Jacobsthal: " + jacobsthal + "\n")
+    println("Serie de Pell - Lucas (2): " + seriesRecurrentes(2, 2, 2, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell - Lucas (3): " + seriesRecurrentes(2, 2, 3, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell - Lucas (4): " + seriesRecurrentes(2, 2, 4, (a, b) => 2 * b + a) + "\n")
+    println("Serie de Pell - Lucas (5): " + seriesRecurrentes(2, 2, 5, (a, b) => 2 * b + a) + "\n")
 
+    println("Serie de Jacobsthal (2): " + seriesRecurrentes(0, 1, 2, (a, b) => b + 2 * a) + "\n")
+    println("Serie de Jacobsthal (3): " + seriesRecurrentes(0, 1, 3, (a, b) => b + 2 * a) + "\n")
+    println("Serie de Jacobsthal (4): " + seriesRecurrentes(0, 1, 4, (a, b) => b + 2 * a) + "\n")
+    println("Serie de Jacobsthal (5): " + seriesRecurrentes(0, 1, 5, (a, b) => b + 2 * a) + "\n")
+  }
+
+  test()
 }

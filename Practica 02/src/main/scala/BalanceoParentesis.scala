@@ -20,26 +20,27 @@ object BalanceoParentesis extends App {
     chequeo(cadena)
   }
 
-  println("Balanceo de Cadenas con Parentesis" + "\n")
+  def test(): Unit = {
 
-  var lista1: List[Char] = List('(', 'i', 'f', '(', 'a', '>', 'b', ')', '(', 'b', '/', 'a', ')',
-    'e', 'l', 's', 'e', '(', 'a', '/', '(', 'b', '*', 'b', ')', ')', ')')
-  var lista2: List[Char] = List('(', 'c', 'c', 'c', '(', 'c', 'c', 'c', ')', 'c', 'c', '(', '(',
-    'c', 'c', 'c', '(', 'c', ')', ')', ')', ')')
-  var lista3: List[Char] = List('(', 'i', 'f', '(', 'a', '>', 'b', ')', 'b', '/', 'a', ')', 'e',
-    'l', 's', 'e', '(', 'a', '/', '(', 'b', '*', 'b', ')', ')', ')')
-  var lista4: List[Char] = List('(', 'c', 'c', 'c', '(', 'c', 'c', 'c', 'c', 'c', '(', '(', 'c',
-    'c', 'c', '(', 'c', ')', ')', ')', ')')
-  var lista5: List[Char] = List('(', ')', ')', '(', ')', '(', ')', ')')
-  var lista6: List[Char] = List('(', ')', ')', '(')
+    val listas: List[List[Char]] = List(
+      List('(', 'i', 'f', '(', 'a', '>', 'b', ')', '(', 'b', '/', 'a', ')', 'e', 'l', 's', 'e', '(', 'a', '/', '(', 'b', '*', 'b', ')', ')', ')'),
+      List('(', 'c', 'c', 'c', '(', 'c', 'c', 'c', ')', 'c', 'c', '(', '(', 'c', 'c', 'c', '(', 'c', ')', ')', ')', ')'),
+      List('(', 'i', 'f', '(', 'a', '>', 'b', ')', 'b', '/', 'a', ')', 'e', 'l', 's', 'e', '(', 'a', '/', '(', 'b', '*', 'b', ')', ')', ')'),
+      List('(', 'c', 'c', 'c', '(', 'c', 'c', 'c', 'c', 'c', '(', '(', 'c', 'c', 'c', '(', 'c', ')', ')', ')', ')'),
+      List('(', ')', ')', '(', ')', '(', ')', ')'),
+      List('(', ')', ')', '(')
+    )
 
-  var lista: List[List[Char]] = List(lista1, lista2, lista3, lista4, lista5, lista6)
+    println("Balanceo de Cadenas con Parentesis (Test): " + "\n")
 
-  for (sublista <- lista) {
-    if (chequearBalance(sublista)) {
-      println("La cadena " + sublista.mkString + " esta balanceada" + "\n")
-    } else {
-      println("La cadena " + sublista.mkString + " no esta balanceada" + "\n")
+    for (lista <- listas) {
+      if (chequearBalance(lista)) {
+        println("La cadena " + lista.mkString + " esta balanceada" + "\n")
+      } else {
+        println("La cadena " + lista.mkString + " no esta balanceada" + "\n")
+      }
     }
   }
+
+  test()
 }

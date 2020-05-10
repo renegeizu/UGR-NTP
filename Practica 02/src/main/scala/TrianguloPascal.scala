@@ -22,9 +22,17 @@ object TrianguloPascal extends App {
     println("")
   }
 
-  println("Triangulo de Pascal" + "\n")
+  def test(): Unit = {
+    println("Triangulo de Pascal (Test)" + "\n")
 
-  generarTriangulo(10)
+    generarTriangulo(10)
 
-  println(calcularValorTrianguloPascal(15, 10))
+    println("El valor para (15, 10) es " + calcularValorTrianguloPascal(15, 10))
+    println("El valor para (10, 15) es " + calcularValorTrianguloPascal(10, 15))
+    println("El valor para (10, 10) es " + calcularValorTrianguloPascal(10, 10))
+    println("El valor para (15, 15) es " + calcularValorTrianguloPascal(15, 15))
+    println("El valor para (3, 2) es " + calcularValorTrianguloPascal(3, 2))
+  }
+
+  test()
 }

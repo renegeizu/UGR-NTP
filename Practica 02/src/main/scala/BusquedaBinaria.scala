@@ -25,23 +25,24 @@ object BusquedaBinaria extends App {
     buscar(coleccion)
   }
 
-  val lista1: Array[Char] = Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-  val valor1: Char = 'r'
-  val comparador1 = (x: Char, y: Char) => x < y
+  def test(): Unit = {
 
-  val lista2: Array[Int] = Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-  val valor2: Int = 3
-  val comparador2 = (x: Int, y: Int) => x < y
+    val listaCaracteres: Array[Char] = Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+    val listaNumerica: Array[Int] = Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-  println("Busqueda Binaria Generica" + "\n")
+    val comparadorCaracteres = (x: Char, y: Char) => x < y
+    val comparadorNumerico = (x: Int, y: Int) => x < y
 
-  val resultado1 = busquedaBinaria[Char](lista1, valor1, comparador1)
-  val resultado2 = busquedaBinaria[Int](lista2, valor2, comparador2)
+    println("Busqueda Binaria Generica (Test)" + "\n")
 
-  println("El resultado de la busqueda en la lista  " + lista1.mkString + " del valor " + valor1 +
-    " es " + resultado1 + "\n")
+    println("El resultado de la busqueda en la lista  " + listaCaracteres.mkString + " del valor 'a' es " + busquedaBinaria[Char](listaCaracteres, 'a', comparadorCaracteres) + "\n")
+    println("El resultado de la busqueda en la lista  " + listaCaracteres.mkString + " del valor 'l' es " + busquedaBinaria[Char](listaCaracteres, 'l', comparadorCaracteres) + "\n")
+    println("El resultado de la busqueda en la lista  " + listaCaracteres.mkString + " del valor 'r' es " + busquedaBinaria[Char](listaCaracteres, 'r', comparadorCaracteres) + "\n")
 
-  println("El resultado de la busqueda en la lista  " + lista2.mkString + " del valor " + valor2 +
-    " es " + resultado2 + "\n")
+    println("El resultado de la busqueda en la lista  " + listaNumerica.mkString + " del valor '3' es " + busquedaBinaria[Int](listaNumerica, 3, comparadorNumerico) + "\n")
+    println("El resultado de la busqueda en la lista  " + listaNumerica.mkString + " del valor '7' es " + busquedaBinaria[Int](listaNumerica, 7, comparadorNumerico) + "\n")
+    println("El resultado de la busqueda en la lista  " + listaNumerica.mkString + " del valor '9' es " + busquedaBinaria[Int](listaNumerica, 9, comparadorNumerico) + "\n")
+  }
+
+  test()
 }

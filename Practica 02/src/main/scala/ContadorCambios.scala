@@ -15,8 +15,17 @@ object ContadorCambios extends App {
     contar(cantidad, monedas, List()).filter((lista) => lista.nonEmpty)
   }
 
-  println("Contador de Posibles Cambios de Moneda" + "\n")
+  def test(): Unit = {
 
-  println(listarCambiosPosibles(4, List(1, 2)))
+    println("Contador de Posibles Cambios de Moneda" + "\n")
 
+    println(listarCambiosPosibles(4, List(1, 2, 3, 4)))
+    println(listarCambiosPosibles(4, List(1, 2, 3)))
+    println(listarCambiosPosibles(4, List(1, 2)))
+    println(listarCambiosPosibles(4, List(1)))
+    println(listarCambiosPosibles(4, List()))
+    println(listarCambiosPosibles(0, List(1, 2, 3, 4)))
+  }
+
+  test()
 }
