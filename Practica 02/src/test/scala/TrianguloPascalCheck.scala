@@ -1,3 +1,4 @@
+import TrianguloPascal.calcularValorTrianguloPascal
 import org.scalacheck.{Gen, Properties}
 import org.scalacheck.Prop.forAll
 
@@ -12,8 +13,8 @@ object TrianguloPascalCheck extends Properties("Triangulo de Pascal") {
 
   property("Valor Extremos = 1") = {
     forAll(coordenadasExtremos) {
-      (i) => {
-        1 == TrianguloPascal.calcularValorTrianguloPascal(i._1, i._2)
+      i => {
+        1 == calcularValorTrianguloPascal(i._1, i._2)
       }
     }
   }
@@ -34,4 +35,5 @@ object TrianguloPascalCheck extends Properties("Triangulo de Pascal") {
       }
     }
   }
+
 }

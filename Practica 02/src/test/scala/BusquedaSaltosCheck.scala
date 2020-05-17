@@ -1,3 +1,4 @@
+import BusquedaSaltos.busquedaSaltos
 import org.scalacheck.{Gen, Properties}
 import org.scalacheck.Prop.forAll
 
@@ -14,7 +15,7 @@ object BusquedaSaltosCheck extends Properties("Busqueda a Saltos Generica") {
       val elemento = Gen.choose(0, MAXIMO).sample.getOrElse(0)
       val indice = listaOrdenada.indexOf(elemento)
 
-      val resultado = BusquedaSaltos.busquedaSaltos[Int](listaOrdenada.toArray, elemento, COMPARADOR_INT)
+      val resultado = busquedaSaltos[Int](listaOrdenada.toArray, elemento, COMPARADOR_INT)
 
       (indice == resultado) || (listaOrdenada(indice) == listaOrdenada(resultado))
     }

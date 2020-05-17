@@ -1,3 +1,4 @@
+import BalanceoParentesis.chequearBalance
 import org.scalacheck.{Gen, Properties}
 import org.scalacheck.Prop.forAll
 
@@ -30,7 +31,7 @@ object BalanceoParentesisCheck extends Properties("Balanceo de Cadenas con Paren
 
   property("Comprobar Balanceo de Parentesis") = forAll(generarCadenas(13)){
     (list) => {
-      BalanceoParentesis.chequearBalance(list) == checkBalanceo(list)
+      chequearBalance(list) == checkBalanceo(list)
     }
   }
 

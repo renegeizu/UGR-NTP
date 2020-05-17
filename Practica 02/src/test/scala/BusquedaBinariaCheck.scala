@@ -1,3 +1,4 @@
+import BusquedaBinaria.busquedaBinaria
 import org.scalacheck.{Gen, Properties}
 import org.scalacheck.Prop.forAll
 
@@ -15,7 +16,7 @@ object BusquedaBinariaCheck extends Properties("Busqueda Binaria Generica") {
       val elemento = Gen.choose(0, MAXIMO).sample.getOrElse(0)
       val indice = listaOrdenada.indexOf(elemento)
 
-      val resultado = BusquedaBinaria.busquedaBinaria[Int](listaOrdenada.toArray, elemento, COMPARADOR_INT)
+      val resultado = busquedaBinaria[Int](listaOrdenada.toArray, elemento, COMPARADOR_INT)
 
       (indice == resultado) || (listaOrdenada(indice) == listaOrdenada(resultado))
     }
